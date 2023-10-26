@@ -9,6 +9,14 @@ import ClassClick from "./components/ClassClick";
 import EventBind from "./components/EventBind";
 import ParentComponent from "./components/ParentComponent";
 import UserGreeting from "./components/UserGreeting";
+import NameList from "./components/NameList";
+import PersonList from "./components/PersonList";
+import StyleSheet from "./components/StyleSheet";
+import Inline from "./components/Inline";
+import "./components/appStyles.css";
+import styles from "./components/appStyles.module.css";
+import Form from "./components/Form";
+import LifeCycleA from "./LifeCycleA";
 
 export default class App extends Component {
   render() {
@@ -21,13 +29,31 @@ export default class App extends Component {
         {/* <Welcome name="Peter" gender="male" /> */}
         {/* <Welcome name="Maya" gender="female" /> */}
         {/* <Hello /> */}
+
         {/* <Message /> */}
+
         {/* <Counter/> */}
+
         {/* <FunctionClick /> */}
         {/* <ClassClick /> */}
+
         {/* <EventBind /> */}
+
         {/* <ParentComponent /> */}
-        <UserGreeting/>
+
+        {/* <UserGreeting/> */}
+        {/* <NameList /> */}
+
+        {/* <PersonList /> */}
+
+        {/* <StyleSheet primary={true}/> */}
+        {/* <Inline /> */}
+        {/* <h1 className="error">Error</h1>
+        <h1 className={styles.success}>Success</h1> */}
+
+        {/* <Form/> */}
+
+        <LifeCycleA />
       </div>
     );
   }
