@@ -32,7 +32,7 @@ class LifeCycleA extends Component {
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log("LifeCycleA getSnapshotBeforeUpdate");
-    return null
+    return null;
   }
 
   componentDidUpdate() {
@@ -67,10 +67,8 @@ export default LifeCycleA;
 // 3. render
 // 4. componentDidMount
 
-// life cycle methods are similar to useEffect hook
-
+// mounting phase is similar to useEffect hook
 // look at order of execution when having children i.e., <LifeCycleB />
-// children are rendered firts before execution continues to parent
 
 // TODO: UPDATING PHASE
 // 1. static getDerivedStateFromProps/x
@@ -80,3 +78,10 @@ export default LifeCycleA;
 // 5. componentDidUpdate/MUST USE
 
 // render/componenetDidUpdate ....MUST
+
+// TODO: UNMOUNTING PHASE
+// 1. componentWillUnmount
+
+// TODO: ERROR HANDLINH PHASE
+// 1. static getDerivevdStateFromError
+// 2. componentDidCatch

@@ -17,11 +17,20 @@ import "./components/appStyles.css";
 import styles from "./components/appStyles.module.css";
 import Form from "./components/Form";
 import LifeCycleA from "./LifeCycleA";
+import FragmentDemo from "./components/FragmentDemo";
+import Table from "./components/Table";
+import PureComp from "./components/PureComp";
+import ParentComp from "./components/ParentComp";
+import ClassCounter from "./components/hooks/useState/ClassCounter";
+import FunctionCounter from "./components/hooks/useState/FunctionCounter";
+import ObjectState from "./components/hooks/useState/ObjectState";
+import ArrayState from "./components/hooks/useState/ArrayState";
 
 export default class App extends Component {
   render() {
     return (
       <div>
+        {/* TODO: ===== BASICS OF REACT =====*/}
         {/* <Greet name="John" gender="male">
           <p>This is children</p>
         </Greet> */}
@@ -53,7 +62,22 @@ export default class App extends Component {
 
         {/* <Form/> */}
 
-        <LifeCycleA />
+        {/* <LifeCycleA /> */}
+
+        {/* <FragmentDemo /> */}
+        {/* <Table /> */}
+
+        {/* <ParentComp /> */}
+
+        {/* TODO: ===== HOOKS ===== */}
+
+        {/* ===== useState ===== */}
+        {/* <ClassCounter/> */}
+        {/* <FunctionCounter /> */}
+        {/* <ObjectState/> */}
+        {/* <ArrayState /> */}
+
+        {/* ===== useEffect ===== */}
       </div>
     );
   }

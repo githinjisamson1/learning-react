@@ -7,7 +7,11 @@ class ClassClick extends Component {
   render() {
     return (
       <div>
+        
+        
         <button onClick={this.handleClick}>Click</button>
+
+
       </div>
     );
   }
