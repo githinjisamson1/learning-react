@@ -25,6 +25,12 @@ import ClassCounter from "./components/hooks/useState/ClassCounter";
 import FunctionCounter from "./components/hooks/useState/FunctionCounter";
 import ObjectState from "./components/hooks/useState/ObjectState";
 import ArrayState from "./components/hooks/useState/ArrayState";
+import UpdateTitle from "./components/hooks/useEffect/UpdateTitle";
+import RunEffectOnce from "./components/hooks/useEffect/RunEffectOnce";
+import CleanupDemo from "./components/hooks/useEffect/CleanupDemo";
+import IntervalCounter from "./components/hooks/useEffect/IntervalCounter";
+import DataFetching from "./components/hooks/useEffect/DataFetching";
+import FetchSinglePost from "./components/hooks/useEffect/FetchSinglePost";
 
 export default class App extends Component {
   render() {
@@ -78,6 +84,12 @@ export default class App extends Component {
         {/* <ArrayState /> */}
 
         {/* ===== useEffect ===== */}
+        {/* <UpdateTitle /> */}
+        {/* <RunEffectOnce /> */}
+        {/* <CleanupDemo/> */}
+        {/* <IntervalCounter /> */}
+        {/* <DataFetching /> */}
+        <FetchSinglePost />
       </div>
     );
   }
