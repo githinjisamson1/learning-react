@@ -31,66 +31,72 @@ import CleanupDemo from "./components/hooks/useEffect/CleanupDemo";
 import IntervalCounter from "./components/hooks/useEffect/IntervalCounter";
 import DataFetching from "./components/hooks/useEffect/DataFetching";
 import FetchSinglePost from "./components/hooks/useEffect/FetchSinglePost";
+import PropDrilling from "./components/hooks/useContext/PropDrilling";
+import ContextApi from "./components/hooks/useContext/ContextApi";
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        {/* TODO: ===== BASICS OF REACT =====*/}
-        {/* <Greet name="John" gender="male">
+const App = () => {
+  return (
+    <div>
+      {/* TODO: ===== BASICS OF REACT =====*/}
+      {/* <Greet name="John" gender="male">
           <p>This is children</p>
         </Greet> */}
-        {/* <Greet name="Jane" gender="female" /> */}
-        {/* <Welcome name="Peter" gender="male" /> */}
-        {/* <Welcome name="Maya" gender="female" /> */}
-        {/* <Hello /> */}
+      {/* <Greet name="Jane" gender="female" /> */}
+      {/* <Welcome name="Peter" gender="male" /> */}
+      {/* <Welcome name="Maya" gender="female" /> */}
+      {/* <Hello /> */}
 
-        {/* <Message /> */}
+      {/* <Message /> */}
 
-        {/* <Counter/> */}
+      {/* <Counter/> */}
 
-        {/* <FunctionClick /> */}
-        {/* <ClassClick /> */}
+      {/* <FunctionClick /> */}
+      {/* <ClassClick /> */}
 
-        {/* <EventBind /> */}
+      {/* <EventBind /> */}
 
-        {/* <ParentComponent /> */}
+      {/* <ParentComponent /> */}
 
-        {/* <UserGreeting/> */}
-        {/* <NameList /> */}
+      {/* <UserGreeting/> */}
+      {/* <NameList /> */}
 
-        {/* <PersonList /> */}
+      {/* <PersonList /> */}
 
-        {/* <StyleSheet primary={true}/> */}
-        {/* <Inline /> */}
-        {/* <h1 className="error">Error</h1>
+      {/* <StyleSheet primary={true}/> */}
+      {/* <Inline /> */}
+      {/* <h1 className="error">Error</h1>
         <h1 className={styles.success}>Success</h1> */}
 
-        {/* <Form/> */}
+      {/* <Form/> */}
 
-        {/* <LifeCycleA /> */}
+      {/* <LifeCycleA /> */}
 
-        {/* <FragmentDemo /> */}
-        {/* <Table /> */}
+      {/* <FragmentDemo /> */}
+      {/* <Table /> */}
 
-        {/* <ParentComp /> */}
+      {/* <ParentComp /> */}
 
-        {/* TODO: ===== HOOKS ===== */}
+      {/* TODO: ===== HOOKS ===== */}
 
-        {/* ===== useState ===== */}
-        {/* <ClassCounter/> */}
-        {/* <FunctionCounter /> */}
-        {/* <ObjectState/> */}
-        {/* <ArrayState /> */}
+      {/* ===== useState ===== */}
+      {/* <ClassCounter/> */}
+      {/* <FunctionCounter /> */}
+      {/* <ObjectState/> */}
+      {/* <ArrayState /> */}
 
-        {/* ===== useEffect ===== */}
-        {/* <UpdateTitle /> */}
-        {/* <RunEffectOnce /> */}
-        {/* <CleanupDemo/> */}
-        {/* <IntervalCounter /> */}
-        {/* <DataFetching /> */}
-        <FetchSinglePost />
-      </div>
-    );
-  }
-}
+      {/* ===== useEffect ===== */}
+      {/* <UpdateTitle /> */}
+      {/* <RunEffectOnce /> */}
+      {/* <CleanupDemo/> */}
+      {/* <IntervalCounter /> */}
+      {/* <DataFetching /> */}
+      {/* <FetchSinglePost /> */}
+
+      {/* ===== useContext ===== */}
+      {/* <PropDrilling /> */}
+      <ContextApi />
+    </div>
+  );
+};
+
+export default App;
