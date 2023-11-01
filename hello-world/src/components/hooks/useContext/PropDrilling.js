@@ -4,6 +4,7 @@ import { people as data } from "../../../MockData";
 const PropDrilling = () => {
   const [people, setPeople] = useState(data);
 
+  // !prop drilling removePerson
   const removePerson = (id) => {
     const newPeople = people.filter((person) => {
       return person.id !== id;

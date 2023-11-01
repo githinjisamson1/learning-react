@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { people as data } from "../../../MockData";
 
 // !returns two components: Provider(distributor), Consumer
+// !we can pass arguments to React.createContext()
 const PersonContext = React.createContext();
 
 const ContextApi = () => {
@@ -70,7 +71,7 @@ export default ContextApi;
 
 // !steps include:
 // React.createContext
-// wrap return of root Comp with PersonContext.Provider
+// wrap return of root Component with PersonContext.Provider
 // const {removePerson} = useContext(PersonContext)
 
 // !a use case would be to use useGlobalContext === research on this

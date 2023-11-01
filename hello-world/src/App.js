@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useContext, useReducer } from "react";
 import Greet from "./components/Greet";
 import Welcome from "./components/Welcome";
 import Hello from "./components/Hello";
@@ -33,70 +33,124 @@ import DataFetching from "./components/hooks/useEffect/DataFetching";
 import FetchSinglePost from "./components/hooks/useEffect/FetchSinglePost";
 import PropDrilling from "./components/hooks/useContext/PropDrilling";
 import ContextApi from "./components/hooks/useContext/ContextApi";
+import SimpleStateAction from "./components/hooks/useReducer/SimpleStateAction";
+import ComplexStateAction from "./components/hooks/useReducer/ComplexStateAction";
+import MultipleUseReducers from "./components/hooks/useReducer/MultipleUseReducers";
+import ComponentA from "./components/hooks/useReducer/ComponentA";
+import DataFetching1 from "./components/hooks/useReducer/DataFetching1";
+import DataFetching2 from "./components/hooks/useReducer/DataFetching2";
+
+const CounterContext = React.createContext();
+
+// !initialState
+const initialState = 0;
+
+// !reducer
+const reducer = (state, action) => {
+  switch (action) {
+    case "INCREMENT":
+      return state + 1;
+    case "DECREMENT":
+      return state - 1;
+    case "RESET":
+      return initialState;
+    default:
+      return state;
+  }
+};
 
 const App = () => {
+  // !useReducer
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <div>
-      {/* TODO: ===== BASICS OF REACT =====*/}
-      {/* <Greet name="John" gender="male">
+    <CounterContext.Provider value={{ state, dispatch }}>
+      <div>
+        {/* TODO: ===== BASICS OF REACT =====*/}
+        {/* <Greet name="John" gender="male">
           <p>This is children</p>
         </Greet> */}
-      {/* <Greet name="Jane" gender="female" /> */}
-      {/* <Welcome name="Peter" gender="male" /> */}
-      {/* <Welcome name="Maya" gender="female" /> */}
-      {/* <Hello /> */}
+        {/* <Greet name="Jane" gender="female" /> */}
+        {/* <Welcome name="Peter" gender="male" /> */}
+        {/* <Welcome name="Maya" gender="female" /> */}
+        {/* <Hello /> */}
 
-      {/* <Message /> */}
+        {/* <Message /> */}
 
-      {/* <Counter/> */}
+        {/* <Counter/> */}
 
-      {/* <FunctionClick /> */}
-      {/* <ClassClick /> */}
+        {/* <FunctionClick /> */}
+        {/* <ClassClick /> */}
 
-      {/* <EventBind /> */}
+        {/* <EventBind /> */}
 
-      {/* <ParentComponent /> */}
+        {/* <ParentComponent /> */}
 
-      {/* <UserGreeting/> */}
-      {/* <NameList /> */}
+        {/* <UserGreeting/> */}
+        {/* <NameList /> */}
 
-      {/* <PersonList /> */}
+        {/* <PersonList /> */}
 
-      {/* <StyleSheet primary={true}/> */}
-      {/* <Inline /> */}
-      {/* <h1 className="error">Error</h1>
+        {/* <StyleSheet primary={true}/> */}
+        {/* <Inline /> */}
+        {/* <h1 className="error">Error</h1>
         <h1 className={styles.success}>Success</h1> */}
 
-      {/* <Form/> */}
+        {/* <Form/> */}
 
-      {/* <LifeCycleA /> */}
+        {/* <LifeCycleA /> */}
 
-      {/* <FragmentDemo /> */}
-      {/* <Table /> */}
+        {/* <FragmentDemo /> */}
+        {/* <Table /> */}
 
-      {/* <ParentComp /> */}
+        {/* <ParentComp /> */}
 
-      {/* TODO: ===== HOOKS ===== */}
+        {/* TODO: ===== HOOKS ===== */}
 
-      {/* ===== useState ===== */}
-      {/* <ClassCounter/> */}
-      {/* <FunctionCounter /> */}
-      {/* <ObjectState/> */}
-      {/* <ArrayState /> */}
+        {/* ===== useState ===== */}
+        {/* <ClassCounter/> */}
+        {/* <FunctionCounter /> */}
+        {/* <ObjectState/> */}
+        {/* <ArrayState /> */}
 
-      {/* ===== useEffect ===== */}
-      {/* <UpdateTitle /> */}
-      {/* <RunEffectOnce /> */}
-      {/* <CleanupDemo/> */}
-      {/* <IntervalCounter /> */}
-      {/* <DataFetching /> */}
-      {/* <FetchSinglePost /> */}
+        {/* ===== useEffect ===== */}
+        {/* <UpdateTitle /> */}
+        {/* <RunEffectOnce /> */}
+        {/* <CleanupDemo/> */}
+        {/* <IntervalCounter /> */}
+        {/* <DataFetching /> */}
+        {/* <FetchSinglePost /> */}
 
-      {/* ===== useContext ===== */}
-      {/* <PropDrilling /> */}
-      <ContextApi />
-    </div>
+        {/* ===== useContext ===== */}
+        {/* <PropDrilling /> */}
+        {/* <ContextApi /> */}
+
+        {/* ===== useReducer ===== */}
+        {/* <SimpleStateAction/> */}
+        {/* <ComplexStateAction /> */}
+        {/* <MultipleUseReducers /> */}
+        {/* 
+            {state}
+            <ComponentA /> 
+        */}
+
+        {/* ===== data fetching with useReducer ===== */}
+        {/* <DataFetching1 /> */}
+        <DataFetching2 />
+      </div>
+    </CounterContext.Provider>
   );
 };
 
 export default App;
+
+// !useGlobalContext: to be used anywhere
+export const useGlobalContext = () => {
+  return useContext(CounterContext);
+};
+
+// TODO: steps include:
+// React.createContext()
+// wrap return of root Component in CounterContext.Provider
+// pass in value attribute
+// export useGlobalContext
+// const {dispatch} = useGlobalContext()
