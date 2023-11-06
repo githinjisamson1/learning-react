@@ -39,6 +39,22 @@ import MultipleUseReducers from "./components/hooks/useReducer/MultipleUseReduce
 import ComponentA from "./components/hooks/useReducer/ComponentA";
 import DataFetching1 from "./components/hooks/useReducer/DataFetching1";
 import DataFetching2 from "./components/hooks/useReducer/DataFetching2";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/react-router/Home";
+// import About from "./components/react-router/About";
+import Navbar from "./components/react-router/Navbar";
+import OrderSummary from "./components/react-router/OrderSummary";
+import NoMatchRoute from "./components/react-router/NoMatchRoute";
+import Products from "./components/react-router/Products";
+import FeaturedProducts from "./components/react-router/FeaturedProducts";
+import NewProducts from "./components/react-router/NewProducts";
+import Users from "./components/react-router/Users";
+import UserDetails from "./components/react-router/UserDetails";
+import Admin from "./components/react-router/Admin";
+import About from "./components/react-router/About";
+// const LazyAbout = React.lazy(() => {
+//   import("./components/react-router/About");
+// });
 
 const CounterContext = React.createContext();
 
@@ -135,7 +151,46 @@ const App = () => {
 
         {/* ===== data fetching with useReducer ===== */}
         {/* <DataFetching1 /> */}
-        <DataFetching2 />
+        {/* <DataFetching2 /> */}
+
+        {/* TODO: ===== react-router ===== */}
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route
+            exact
+            path="about"
+            element={
+              <About />
+              // <React.Suspense fallback="Loading...">
+              //   <LazyAbout />
+              // </React.Suspense>
+            }
+          />
+
+          <Route exact path="order-summary" element={<OrderSummary />} />
+
+          <Route path="*" element={<NoMatchRoute />} />
+
+          <Route path="products" element={<Products />}>
+            {/* specifying that a route should be rendered at the parent URL */}
+            <Route index element={<FeaturedProducts />} />
+
+            {/* child elements/rendered using <Outlet/> */}
+            {/* /products/featured */}
+            <Route path="featured" element={<FeaturedProducts />} />
+            {/* /products/new */}
+            <Route path="new" element={<NewProducts />} />
+          </Route>
+
+          {/* nested */}
+          <Route path="users" element={<Users />}>
+            {/*  dynamic routes*/}
+            <Route path=":userId" element={<UserDetails />} />
+            {/* rendered/more specific */}
+            <Route path="admin" element={<Admin />} />
+          </Route>
+        </Routes>
       </div>
     </CounterContext.Provider>
   );
@@ -148,7 +203,7 @@ export const useGlobalContext = () => {
   return useContext(CounterContext);
 };
 
-// TODO: steps include:
+// TODO: steps when using useContext hook include:
 // React.createContext()
 // wrap return of root Component in CounterContext.Provider
 // pass in value attribute
