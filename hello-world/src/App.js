@@ -191,6 +191,8 @@ const App = () => {
             <Route path="admin" element={<Admin />} />
           </Route>
         </Routes>
+
+        {/* ===== useCallback ===== */}
       </div>
     </CounterContext.Provider>
   );
