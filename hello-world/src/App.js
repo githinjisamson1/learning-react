@@ -55,6 +55,8 @@ import About from "./components/react-router/About";
 // const LazyAbout = React.lazy(() => {
 //   import("./components/react-router/About");
 // });
+// react hooks
+import FunctionalCounter from "./hooks/FunctionalCounter";
 
 const CounterContext = React.createContext();
 
@@ -193,6 +195,8 @@ const App = () => {
         </Routes>
 
         {/* ===== useCallback ===== */}
+        {/* TODO: ===== REACT HOOKS ===== */}
+        <FunctionalCounter/>
       </div>
     </CounterContext.Provider>
   );
