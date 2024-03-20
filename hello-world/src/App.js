@@ -60,6 +60,7 @@ import FunctionalCounter from "./hooks/FunctionalCounter";
 import FunctionalObject from "./hooks/FunctionalObject";
 import FunctionalArray from "./hooks/FunctionalArray";
 import FunctionalCleanUp from "./hooks/FunctionalCleanUp";
+import UsersList from "./hooks/UsersList";
 
 const CounterContext = React.createContext();
 
@@ -203,6 +204,7 @@ const App = () => {
         <FunctionalObject />
         <FunctionalArray/>
         <FunctionalCleanUp/>
+        <UsersList/>
       </div>
     </CounterContext.Provider>
   );
