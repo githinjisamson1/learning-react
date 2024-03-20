@@ -59,6 +59,7 @@ import About from "./components/react-router/About";
 import FunctionalCounter from "./hooks/FunctionalCounter";
 import FunctionalObject from "./hooks/FunctionalObject";
 import FunctionalArray from "./hooks/FunctionalArray";
+import FunctionalCleanUp from "./hooks/FunctionalCleanUp";
 
 const CounterContext = React.createContext();
 
@@ -201,6 +202,7 @@ const App = () => {
         <FunctionalCounter />
         <FunctionalObject />
         <FunctionalArray/>
+        <FunctionalCleanUp/>
       </div>
     </CounterContext.Provider>
   );
