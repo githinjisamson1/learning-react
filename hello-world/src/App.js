@@ -57,6 +57,7 @@ import About from "./components/react-router/About";
 // });
 // react hooks
 import FunctionalCounter from "./hooks/FunctionalCounter";
+import FunctionalObject from "./hooks/FunctionalObject";
 
 const CounterContext = React.createContext();
 
@@ -196,7 +197,8 @@ const App = () => {
 
         {/* ===== useCallback ===== */}
         {/* TODO: ===== REACT HOOKS ===== */}
-        <FunctionalCounter/>
+        <FunctionalCounter />
+        <FunctionalObject />
       </div>
     </CounterContext.Provider>
   );
