@@ -27,6 +27,10 @@ const UsersList = () => {
       });
   }, []);
 
+  if (usersState.loading) {
+    return <h2>Loading...</h2>;
+  }
+
   return (
     <>
       {usersState.users &&
